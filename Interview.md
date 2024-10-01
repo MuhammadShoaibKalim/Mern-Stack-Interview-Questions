@@ -464,9 +464,188 @@ This README contains a comprehensive list of the top 100 questions and answers f
          });
       ```
 
+55. **What are Promises in Node.js?**
+    - **Answer:** Promises are objects that represent the eventual completion (or failure) of an asynchronous operation.
+    - **Example:**
+      ```javascript
+      const promise = new Promise((resolve, reject) => {
+        // Asynchronous task
+        if (success) {
+          resolve('Success');
+        } else {
+          reject('Error');
+        }
+      });
+      promise.then(result => console.log(result)).catch(error => console.log(error));
+      ```
 
-      
+56. **What is async/await in Node.js?**
+    - **Answer:** Async/await is a syntax for writing asynchronous code that looks synchronous, making it easier to read and maintain.
+    - **Example:**
+      ```javascript
+      const fetchData = async () => {
+        try {
+          const response = await fetch('/api/data');
+          const data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      };
+      ```
+
+57. **What is the event loop in Node.js?**
+    - **Answer:** The event loop is a mechanism that allows Node.js to perform non-blocking I/O operations by offloading operations to the system kernel whenever possible.
+    - **Example:** It handles asynchronous callbacks and allows Node.js to run multiple operations simultaneously.
+
+58. **How do you handle file operations in Node.js?**
+    - **Answer:** You can use the `fs` module to perform file operations such as reading and writing files.
+    - **Example:**
+      ```javascript
+      const fs = require('fs');
+      fs.writeFile('file.txt', 'Hello, World!', (err) => {
+        if (err) throw err;
+        console.log('File has been saved!');
+      });
+      ```
+
+59. **What is middleware in Node.js?**
+    - **Answer:** Middleware functions are functions that have access to the request, response, and next middleware function in the application’s request-response cycle.
+    - **Example:**
+      ```javascript
+      app.use((req, res, next) => {
+        console.log('Request received:', req.url);
+        next();
+      });
+      ```
+
+60. **How do you connect to a database in Node.js?**
+    - **Answer:** You can connect to a database using a specific library (like Mongoose for MongoDB) and provide the database URI.
+    - **Example:**
+      ```javascript
+      const mongoose = require('mongoose');
+      mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });
+      ```
+
+61. **What is a REST API?**
+    - **Answer:** A REST API is an architectural style for designing networked applications, using HTTP requests to access and use data.
+    - **Example:** Using GET requests to retrieve data, POST to create data, PUT to update, and DELETE to remove data.
+
+62. **What are environment variables in Node.js?**
+    - **Answer:** Environment variables are used to store configuration settings and secrets outside the codebase.
+    - **Example:** Using `process.env.PORT` to set the port for the server.
+
+63. **What is the difference between synchronous and asynchronous code?**
+    - **Answer:** Synchronous code runs sequentially, while asynchronous code allows other code to run before the previous task completes.
+    - **Example:** Using callbacks, promises, or async/await to handle asynchronous operations.
+
+64. **What is a package.json file?**
+    - **Answer:** `package.json` is a file that contains metadata about your Node.js project, including dependencies and scripts.
+    - **Example:**
+      ```json
+      {
+        "name": "my-app",
+        "version": "1.0.0",
+        "scripts": {
+          "start": "node index.js"
+        },
+        "dependencies": {
+          "express": "^4.17.1"
+        }
+      }
+      ```
+
+65. **What is the purpose of the `require` function in Node.js?**
+    - **Answer:** The `require` function is used to import modules in Node.js.
+    - **Example:**
+      ```javascript
+      const express = require('express');
+      ```
+
+## Advanced Questions
+
+66. **What is the difference between SQL and NoSQL databases?**
+    - **Answer:** SQL databases are relational, use structured data, and require a fixed schema, while NoSQL databases are non-relational, flexible, and can store unstructured data.
+    - **Example:** MySQL (SQL) vs. MongoDB (NoSQL).
+
+67. **What is CORS?**
+    - **Answer:** Cross-Origin Resource Sharing (CORS) is a security feature that allows or restricts resources from being requested from a different domain.
+    - **Example:** Configuring CORS in an Express app to allow requests from specific origins.
+      ```javascript
+      const cors = require('cors');
+      app.use(cors({ origin: 'http://example.com' }));
+      ```
+
+68. **What is JWT?**
+    - **Answer:** JSON Web Tokens (JWT) are used for securely transmitting information between parties as a JSON object.
+    - **Example:**
+      ```javascript
+      const jwt = require('jsonwebtoken');
+      const token = jwt.sign({ userId: 123 }, 'secretKey');
+      ```
+
+69. **What is Redux?**
+    - **Answer:** Redux is a state management library for JavaScript applications, commonly used with React.
+    - **Example:**
+      ```javascript
+      const { createStore } = require('redux');
+      const store = createStore(reducer);
+      ```
+
+70. **What is the Virtual DOM?**
+    - **Answer:** The Virtual DOM is a lightweight copy of the actual DOM that React uses to optimize rendering by minimizing direct manipulation.
+    - **Example:** When the state changes, React updates the Virtual DOM first, then reconciles the changes with the real DOM.
+
+71. **What is the purpose of `npm install`?**
+    - **Answer:** `npm install` installs the dependencies listed in your `package.json` file into the `node_modules` directory.
+    - **Example:**
+      ```bash
+      npm install express
+      ```
 
 
 
 
+
+
+
+72. **What is a state management library?**
+    - **Answer:** A state management library helps manage and centralize application state, making it easier to share data between components.
+    - **Example:** Redux or MobX can be used for state management in React applications.
+
+73. **What is server-side rendering (SSR)?**
+    - **Answer:** SSR is the process of rendering web pages on the server instead of the client, improving load times and SEO.
+    - **Example:** Next.js supports server-side rendering for React applications.
+
+74. **What is client-side rendering (CSR)?**
+    - **Answer:** CSR is the process of rendering web pages in the browser using JavaScript frameworks, often leading to slower initial loads but faster subsequent interactions.
+    - **Example:** A React app that loads and renders entirely in the browser.
+
+75. **What is a WebSocket?**
+    - **Answer:** WebSockets are a protocol for full-duplex communication channels over a single TCP connection, allowing real-time data transfer.
+    - **Example:** Using WebSockets for live chat applications.
+
+## Deployment and Tools Questions
+
+76. **How do you deploy a MERN stack application?**
+    - **Answer:** You can deploy a MERN stack app using services like Heroku, AWS, or DigitalOcean.
+    - **Example:** Pushing your code to Heroku with `git push heroku master`.
+
+77. **What is Docker?**
+    - **Answer:** Docker is a platform for developing, shipping, and running applications in containers, ensuring consistency across environments.
+    - **Example:** Creating a Dockerfile to containerize a Node.js application.
+
+78. **What is CI/CD?**
+    - **Answer:** Continuous Integration and Continuous Deployment (CI/CD) are practices for automating the deployment process, ensuring code changes are automatically tested and deployed.
+    - **Example:** Using GitHub Actions or Jenkins for CI/CD pipelines.
+
+79. **How do you secure a Node.js application?**
+    - **Answer:** You can secure a Node.js application by using HTTPS, validating user input, and implementing proper authentication and authorization.
+    - **Example:** Using helmet.js to secure HTTP headers.
+      ```javascript
+      const helmet = require('helmet');
+      app.use(helmet());
+      ```
+80. **What is a load balancer?**
+    - **Answer:** A load balancer distributes incoming traffic across multiple servers to ensure reliability and performance.
+    - **Example:** Using Nginx or AWS Elastic Load Balancing to manage traffic.
