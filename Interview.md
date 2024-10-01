@@ -218,6 +218,255 @@ This README contains a comprehensive list of the top 100 questions and answers f
       });
       ```
 
+28. **What is a router in Express?**
+   
+     - **Answer:** A router is a way to modularize routes in Express, allowing you to group related routes together.
+    - **Example:**
+      ```javascript
+      const userRouter = express.Router();
+      userRouter.get('/', (req, res) => res.send('Get all users'));
+      userRouter.post('/', (req, res) => res.send('Create a user'));
+      app.use('/api/users', userRouter);
+      ```
+
+      29. **What is a templating engine in Express?**
+    - **Answer:** A templating engine allows you to generate HTML dynamically by using JavaScript on the server side.
+    - **Example:** Using EJS as a templating engine.
+      ```javascript
+      app.set('view engine', 'ejs');
+      app.get('/', (req, res) => {
+        res.render('index', { title: 'Home' });
+      });
+      ```
+
+30. **How do you implement authentication in Express?**
+    - **Answer:** You can use libraries like Passport.js or JWT for handling authentication.
+    - **Example:**
+      ```javascript
+      const jwt = require('jsonwebtoken');
+      app.post('/login', (req, res) => {
+        const token = jwt.sign({ userId: 123 }, 'secretKey');
+        res.json({ token });
+      });
+      ```
+
+## React Questions
+
+31. **What is a component in React?**
+    - **Answer:** A component is a reusable piece of UI that can be defined as a class or function.
+    - **Example:**
+      ```javascript
+      function MyComponent() {
+        return <h1>Hello, World!</h1>;
+      }
+      ```
+
+32. **What is JSX?**
+    - **Answer:** JSX is a syntax extension that looks like HTML and is used to describe the UI in React.
+    - **Example:**
+      ```javascript
+      const element = <div className="greeting">Hello, World!</div>;
+      ```
+
+33. **How do you manage state in React?**
+    - **Answer:** Use the `useState` hook to manage component state.
+    - **Example:**
+      ```javascript
+      const [count, setCount] = useState(0);
+      ```
+
+34. **What is the purpose of `useEffect` in React?**
+    - **Answer:** `useEffect` is used for side effects, such as fetching data or subscribing to events.
+    - **Example:**
+      ```javascript
+      useEffect(() => {
+        fetch('/api/data').then(response => response.json()).then(data => setData(data));
+      }, []);
+      ```
+
+35. **What are props in React?**
+    - **Answer:** Props (properties) are inputs to a component that allow data to be passed down from parent to child.
+    - **Example:**
+      ```javascript
+      function Greeting(props) {
+        return <h1>Hello, {props.name}!</h1>;
+      }
+      ```
+
+36. **What is the difference between state and props?**
+    - **Answer:** State is managed within a component, while props are passed from parent to child components.
+    - **Example:**
+      ```javascript
+      function Parent() {
+        const [message, setMessage] = useState('Hello');
+        return <Child message={message} />;
+      }
+      ```
+
+37. **What is a functional component?**
+    - **Answer:** A functional component is a JavaScript function that returns JSX. It can use hooks for state and lifecycle features.
+    - **Example:**
+      ```javascript
+      const MyComponent = () => <h1>Hello, Functional Component!</h1>;
+      ```
+
+38. **What is a class component?**
+    - **Answer:** A class component is a JavaScript class that extends `React.Component` and includes a render method.
+    - **Example:**
+      ```javascript
+      class MyComponent extends React.Component {
+        render() {
+          return <h1>Hello, Class Component!</h1>;
+        }
+      }
+      ```
+
+39. **What is the context API in React?**
+    - **Answer:** The context API allows you to share data across components without passing props explicitly through every level.
+    - **Example:**
+      ```javascript
+      const MyContext = React.createContext();
+      const MyProvider = ({ children }) => (
+        <MyContext.Provider value="Hello">{children}</MyContext.Provider>
+      );
+      ```
+
+40. **What are controlled components in React?**
+    - **Answer:** Controlled components are form elements whose value is controlled by React state.
+    - **Example:**
+      ```javascript
+      const [inputValue, setInputValue] = useState('');
+      return <input value={inputValue} onChange={e => setInputValue(e.target.value)} />;
+      ```
+
+41. **What are uncontrolled components in React?**
+    - **Answer:** Uncontrolled components store their value in the DOM rather than in React state.
+    - **Example:**
+      ```javascript
+      return <input defaultValue="Hello" />;
+      ```
+
+42. **What is React Router?**
+    - **Answer:** React Router is a library for routing in React applications, allowing you to create single-page applications with multiple views.
+    - **Example:**
+      ```javascript
+      import { BrowserRouter as Router, Route } from 'react-router-dom';
+      <Router>
+        <Route path="/about" component={About} />
+      </Router>
+      ```
+
+43. **What is the purpose of `key` in React lists?**
+    - **Answer:** The `key` prop helps React identify which items have changed, are added, or are removed in a list.
+    - **Example:**
+      ```javascript
+      const items = [1, 2, 3].map(item => <li key={item}>{item}</li>);
+      ```
+
+44. **What are hooks in React?**
+    - **Answer:** Hooks are functions that let you use state and other React features in functional components.
+    - **Example:**
+      ```javascript
+      const [count, setCount] = useState(0);
+      ```
+
+45. **What is `useRef` in React?**
+    - **Answer:** `useRef` is a hook that returns a mutable ref object which persists for the full lifetime of the component.
+    - **Example:**
+      ```javascript
+      const inputRef = useRef();
+      const focusInput = () => {
+        inputRef.current.focus();
+      };
+      ```
+
+46. **What is prop drilling?**
+    - **Answer:** Prop drilling refers to passing props from a parent component down to deeply nested child components.
+    - **Example:** If `ComponentA` passes props to `ComponentB`, which passes it to `ComponentC`, it’s prop drilling.
+
+47. **What is memoization in React?**
+    - **Answer:** Memoization is an optimization technique to prevent unnecessary re-renders of components.
+    - **Example:**
+      ```javascript
+      const MemoizedComponent = React.memo(MyComponent);
+      ```
+
+48. **What is a higher-order component (HOC)?**
+    - **Answer:** A higher-order component is a function that takes a component and returns a new component with additional props or behavior.
+    - **Example:**
+      ```javascript
+      const withLoading = (WrappedComponent) => {
+        return (props) => {
+          if (props.isLoading) return <Loading />;
+          return <WrappedComponent {...props} />;
+        };
+      };
+      ```
+
+49. **What is error boundary in React?**
+    - **Answer:** An error boundary is a React component that catches JavaScript errors in its child components and displays a fallback UI.
+    - **Example:**
+      ```javascript
+      class ErrorBoundary extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { hasError: false };
+        }
+        static getDerivedStateFromError(error) {
+          return { hasError: true };
+        }
+        render() {
+          if (this.state.hasError) {
+            return <h1>Something went wrong.</h1>;
+          }
+          return this.props.children; 
+        }
+      }
+      ```
+
+50. **What are the lifecycle methods in React?**
+    - **Answer:** Lifecycle methods are hooks in class components that allow you to run code at specific points in a component's life.
+    - **Example:**
+      ```javascript
+      componentDidMount() {
+        // Code to run when the component is mounted
+      }
+      ```
+
+## Node.js Questions
+
+51. **What is Node.js?**
+    - **Answer:** Node.js is a runtime environment that allows JavaScript to be run on the server side.
+    - **Example:** Building a REST API that handles requests using JavaScript.
+
+52. **How do you create a basic HTTP server in Node.js?**
+    - **Answer:** Use the `http` module to create a server.
+    - **Example:**
+      ```javascript
+      const http = require('http');
+      const server = http.createServer((req, res) => {
+        res.end('Hello, World!');
+      });
+      server.listen(3000);
+      ```
+
+53. **What is npm?**
+    - **Answer:** npm (Node Package Manager) is a tool to manage packages (libraries) in Node.js.
+    - **Example:** Installing a package with `npm install express`.
+
+54. **What is a callback in Node.js?**
+    - **Answer:** A callback is a function passed as an argument to another function that gets executed after a certain task is completed.
+    - **Example:**
+      ```javascript
+      fs.readFile('file.txt', (err, data) => {
+        if (err) throw err;
+        console.log(data);
+         });
+      ```
+
+
+      
+
 
 
 
