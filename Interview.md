@@ -5,12 +5,105 @@ This README contains a comprehensive list of the top 100 questions and answers f
 ## Table of Contents
 
 1. [General Questions](#general-questions)
+   - 1. What is the MERN stack?
+   - 2. Why use Node.js?
+   - 3. What is MongoDB?
+   - 4. What is Express.js?
+   - 5. What is React?
+   - 6. What is a full-stack developer?
+   - 7. What is the difference between frontend and backend development?
+   - 8. What are RESTful services?
+   - 9. What is the purpose of using Git?
+   - 10. What is the role of npm?
+
 2. [MongoDB Questions](#mongodb-questions)
+   - 11. What is a document in MongoDB?
+   - 12. What is a collection in MongoDB?
+   - 13. How do you connect to MongoDB using Mongoose?
+   - 14. What are schemas in Mongoose?
+   - 15. How do you perform a query in MongoDB?
+   - 16. What is indexing in MongoDB?
+   - 17. What are MongoDB aggregation pipelines?
+   - 18. What is the purpose of the ObjectId in MongoDB?
+   - 19. How do you handle relationships in MongoDB?
+   - 20. What is the difference between `find` and `findOne` in MongoDB?
+   - 21. How do you update a document in MongoDB?
+   - 22. How do you delete a document in MongoDB?
+   - 23. What is the aggregation framework in MongoDB?
+   - 24. How do you perform text search in MongoDB?
+   - 25. How do you implement transactions in MongoDB?
+   - 26. What is the MongoDB Compass tool?
+   - 27. What is a stored procedure in MongoDB?
+   - 28. How do you handle data validation in MongoDB?
+   - 29. What are capped collections in MongoDB?
+   - 30. How do you perform a backup and restore in MongoDB?
+
 3. [Express.js Questions](#expressjs-questions)
+   - 31. How do you create a server with Express?
+   - 32. What are routes in Express?
+   - 33. What is middleware in Express?
+   - 34. How do you handle errors in Express?
+   - 35. What is the purpose of `app.use()`?
+   - 36. What are HTTP methods?
+   - 37. How do you send JSON responses in Express?
+   - 38. How do you serve static files in Express?
+   - 39. What is body-parser?
+   - 40. What are query parameters in Express?
+   - 41. What is the `req` and `res` object in Express?
+   - 42. How do you redirect requests in Express?
+   - 43. What is a router in Express?
+   - 44. What is a templating engine in Express?
+   - 45. How do you implement authentication in Express?
+   - 46. What is the difference between a middleware and a route handler?
+   - 47. What is `express-session`?
+   - 48. How do you implement file uploads in Express?
+   - 49. What is the role of `express-validator`?
+   - 50. How do you handle CORS in Express?
+
 4. [React Questions](#react-questions)
+   - 51. What is a component in React?
+   - 52. What is JSX?
+   - 53. How do you manage state in React?
+   - 54. What is the purpose of `useEffect` in React?
+   - 55. What are props in React?
+   - 56. What is the difference between state and props?
+   - 57. What is a functional component?
+   - 58. What is a class component?
+   - 59. What is the context API in React?
+   - 60. What are controlled components in React?
+   - 61. What are uncontrolled components in React?
+   - 62. What is React Router?
+   - 63. What is the purpose of `key` in React lists?
+   - 64. What are hooks in React?
+   - 65. What is `useRef` in React?
+   - 66. What is prop drilling?
+   - 67. What is memoization in React?
+   - 68. What is a higher-order component (HOC)?
+   - 69. What is an error boundary in React?
+   - 70. What are the lifecycle methods in React?
+
 5. [Node.js Questions](#nodejs-questions)
-6. [Advanced Questions](#advanced-questions)
-7. [Deployment and Tools Questions](#deployment-and-tools-questions)
+   - 71. What is Node.js?
+   - 72. How do you create a basic HTTP server in Node.js?
+   - 73. What is npm?
+   - 74. What is a callback in Node.js?
+   - 75. What are Promises in Node.js?
+   - 76. What is async/await in Node.js?
+   - 77. What is the event loop in Node.js?
+   - 78. How do you handle file operations in Node.js?
+   - 79. What is middleware in Node.js?
+   - 80. How do you connect to a database in Node.js?
+   - 81. What is a REST API?
+   - 82. What are environment variables in Node.js?
+   - 83. What is the difference between synchronous and asynchronous code?
+   - 84. What is a package.json file?
+   - 85. What is the purpose of the `require` function in Node.js?
+   - 86. How do you handle errors in Node.js?
+   - 87. What is `process` in Node.js?
+   - 88. What are streams in Node.js?
+   - 89. What is the role of the `fs` module?
+   - 90. How do you create a web socket server in Node.js?
+
 
 ## General Questions
 
@@ -714,6 +807,177 @@ You said:
       ```plaintext
       DB_CONNECTION=mongodb://localhost/mydatabase
       ```
+
+      ## Advanced Questions
+
+91. **What is the difference between SQL and NoSQL databases?**
+   - **Answer:** SQL databases are relational and use structured query language (SQL) for defining and manipulating data. They have a fixed schema and are suited for complex queries. NoSQL databases are non-relational, store unstructured data, and can have flexible schemas, making them suitable for large volumes of diverse data.
+   - **Example:** MySQL is an SQL database, while MongoDB is a NoSQL database.
+
+92. **What is CORS?**
+   - **Answer:** Cross-Origin Resource Sharing (CORS) is a security feature that allows or restricts resources from being requested from a different domain than the one serving the request. It helps prevent malicious requests from other origins.
+   - **Example:** To enable CORS in an Express application:
+     ```javascript
+     const cors = require('cors');
+     app.use(cors());
+     ```
+
+93. **What is JWT?**
+   - **Answer:** JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties. It is used for authentication and information exchange, allowing secure transmission of user information.
+   - **Example:** Generating a JWT for user authentication:
+     ```javascript
+     const jwt = require('jsonwebtoken');
+     const token = jwt.sign({ userId: 123 }, 'secretKey');
+     ```
+
+94. **What is Redux?**
+   - **Answer:** Redux is a predictable state management library for JavaScript applications. It helps manage application state globally, making state changes predictable and easier to debug.
+   - **Example:** Using Redux to manage user data:
+     ```javascript
+     import { createStore } from 'redux';
+
+     const initialState = { user: null };
+     const reducer = (state = initialState, action) => {
+       switch (action.type) {
+         case 'SET_USER':
+           return { ...state, user: action.payload };
+         default:
+           return state;
+       }
+     };
+     const store = createStore(reducer);
+     ```
+
+95. **What is the Virtual DOM?**
+   - **Answer:** The Virtual DOM is a lightweight copy of the actual DOM. React uses it to optimize rendering by minimizing direct manipulations of the DOM, which can be slow.
+   - **Example:** When state changes in a React component, React updates the Virtual DOM first, then compares it to the actual DOM and updates only the changed elements.
+
+96. **What is the purpose of `npm install`?**
+   - **Answer:** `npm install` is a command that installs the dependencies listed in the `package.json` file into the `node_modules` directory, ensuring your application has all the required libraries.
+   - **Example:** Running `npm install express` will add the Express framework to your project.
+
+97. **What is a state management library?**
+   - **Answer:** A state management library helps manage application state in a predictable way, allowing components to share and update state efficiently. It centralizes the state and provides a single source of truth.
+   - **Example:** Redux, MobX, and Context API are popular state management libraries in React applications.
+
+98. **What is server-side rendering (SSR)?**
+   - **Answer:** Server-side rendering is the process of rendering web pages on the server instead of the client. It improves load times and SEO by sending a fully rendered page to the client.
+   - **Example:** Frameworks like Next.js support SSR for React applications, rendering pages on the server before sending them to the browser.
+
+99. **What is client-side rendering (CSR)?**
+   - **Answer:** Client-side rendering is the process of rendering web pages in the browser using JavaScript frameworks. It results in faster user interactions after the initial load but can slow down the initial page load.
+   - **Example:** A React application that loads and renders entirely in the browser.
+
+100. **What is a WebSocket?**
+   - **Answer:** WebSockets are a protocol for full-duplex communication channels over a single TCP connection, allowing real-time data transfer between the client and server.
+   - **Example:** Implementing a chat application using WebSocket:
+     ```javascript
+     const WebSocket = require('ws');
+     const wss = new WebSocket.Server({ port: 8080 });
+     wss.on('connection', ws => {
+       ws.on('message', message => {
+         console.log(`Received: ${message}`);
+         ws.send(`Echo: ${message}`);
+       });
+     });
+     ```
+
+101. **What is a microservices architecture?**
+   - **Answer:** Microservices architecture is an approach to building applications as a suite of small, independent services that communicate over a network. Each service is self-contained and can be developed, deployed, and scaled independently.
+   - **Example:** A shopping application with separate services for user management, product catalog, and order processing.
+
+102. **What are environment configurations?**
+   - **Answer:** Environment configurations manage different settings for development, testing, and production environments, ensuring that the application behaves correctly in each context.
+   - **Example:** Using a `.env` file to store sensitive information like database credentials.
+
+103. **How do you secure a Node.js application?**
+   - **Answer:** You can secure a Node.js application by using HTTPS, validating user input, implementing proper authentication and authorization, and regularly updating dependencies.
+   - **Example:** Using `helmet` to secure HTTP headers:
+     ```javascript
+     const helmet = require('helmet');
+     app.use(helmet());
+     ```
+
+104. **What is SSL/TLS?**
+   - **Answer:** SSL (Secure Socket Layer) and TLS (Transport Layer Security) are cryptographic protocols that provide secure communication over a computer network.
+   - **Example:** Setting up an HTTPS server in Node.js:
+     ```javascript
+     const https = require('https');
+     const fs = require('fs');
+     const options = {
+       key: fs.readFileSync('server.key'),
+       cert: fs.readFileSync('server.cert')
+     };
+     https.createServer(options, app).listen(443);
+     ```
+
+105. **What is PM2?**
+   - **Answer:** PM2 is a process manager for Node.js applications that keeps your app alive and enables load balancing across multiple instances.
+   - **Example:** Running your application with PM2:
+     ```bash
+     pm2 start app.js
+     ```
+
+106. **What is a load balancer?**
+   - **Answer:** A load balancer distributes incoming network traffic across multiple servers to ensure reliability and performance, preventing any single server from becoming a bottleneck.
+   - **Example:** Using Nginx as a load balancer for a Node.js application.
+
+107. **What is a reverse proxy?**
+   - **Answer:** A reverse proxy is a server that forwards client requests to another server, often used for load balancing, security, and caching.
+   - **Example:** Setting up Nginx as a reverse proxy for your Node.js application.
+
+108. **What is a CDN (Content Delivery Network)?**
+   - **Answer:** A CDN is a network of servers distributed geographically that deliver content to users based on their location, improving load times and availability.
+   - **Example:** Using Cloudflare or AWS CloudFront to serve static assets.
+
+109. **How do you perform logging in a Node.js application?**
+   - **Answer:** You can use logging libraries like Winston or Morgan to log application activity for debugging and monitoring.
+   - **Example:**
+     ```javascript
+     const morgan = require('morgan');
+     app.use(morgan('combined')); // Logs HTTP requests
+     ```
+
+110. **What is OAuth?**
+   - **Answer:** OAuth is an open standard for access delegation, commonly used for token-based authentication. It allows users to grant third-party access to their resources without sharing their credentials.
+   - **Example:** Implementing Google OAuth for authentication in a web application.
+
+## Deployment and Tools Questions
+
+111. **How do you deploy a MERN stack application?**
+   - **Answer:** You can deploy a MERN stack application using services like Heroku, AWS, or DigitalOcean. Each platform has its own deployment process.
+   - **Example:** To deploy to Heroku:
+     ```bash
+     git add .
+     git commit -m "Deploying my app"
+     git push heroku master
+     ```
+
+112. **What is Docker?**
+   - **Answer:** Docker is a platform for developing, shipping, and running applications in containers, which helps to ensure that your app runs in the same environment regardless of where it's deployed.
+   - **Example:** Creating a Dockerfile for your Node.js application:
+     ```dockerfile
+     FROM node:14
+     WORKDIR /app
+     COPY package.json ./
+     RUN npm install
+     COPY . .
+     CMD ["node", "server.js"]
+     ```
+
+113. **What is CI/CD?**
+   - **Answer:** Continuous Integration and Continuous Deployment (CI/CD) are practices that automate the process of integrating code changes and deploying applications, enabling faster and more reliable updates.
+   - **Example:** Using GitHub Actions to set up a CI/CD pipeline that tests and deploys your application whenever you push changes to the main branch.
+
+114. **How do you secure a Node.js application?**
+   - **Answer:** You can secure a Node.js application by using HTTPS, validating user input, implementing proper authentication and authorization, and regularly updating dependencies.
+   - **Example:** Using `helmet` to secure HTTP headers:
+     ```javascript
+     const helmet = require('helmet');
+     app.use(helmet());
+     ```
+
+     
 
 ## Conclusion
 
