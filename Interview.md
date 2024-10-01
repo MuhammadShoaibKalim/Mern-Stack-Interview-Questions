@@ -649,3 +649,74 @@ This README contains a comprehensive list of the top 100 questions and answers f
 80. **What is a load balancer?**
     - **Answer:** A load balancer distributes incoming traffic across multiple servers to ensure reliability and performance.
     - **Example:** Using Nginx or AWS Elastic Load Balancing to manage traffic.
+81. **What is PM2?**
+    - **Answer:** PM2 is a process manager for Node.js applications that helps keep your app alive and enables load balancing.
+    - **Example:** Running your app with PM2.
+      ```bash
+      pm2 start app.js
+      ```
+
+82. **What is SSL/TLS?**
+    - **Answer:** SSL (Secure Socket Layer) and TLS (Transport Layer Security) are protocols for establishing secure communication over the internet.
+    - **Example:** Implementing SSL on a Node.js server using the `https` module.
+
+83. **What is the difference between development and production environments?**
+    - **Answer:** Development environments are for building and testing applications, while production environments host live applications for end-users.
+    - **Example:** Using different database connections and logging levels in development vs. production.
+
+84. **How do you monitor a Node.js application?**
+    - **Answer:** You can monitor Node.js applications using tools like New Relic, Datadog, or built-in logging.
+
+
+
+
+
+You said:
+
+- **Example:**
+      ```javascript
+      const morgan = require('morgan');
+      app.use(morgan('combined')); // Logs HTTP requests
+      ```
+
+85. **What is a reverse proxy?**
+    - **Answer:** A reverse proxy is a server that forwards client requests to another server, typically for load balancing or security.
+    - **Example:** Using Nginx as a reverse proxy for a Node.js application.
+
+86. **What is a CDN (Content Delivery Network)?**
+    - **Answer:** A CDN is a network of servers that deliver content to users based on their geographic location, improving load times and availability.
+    - **Example:** Using Cloudflare or AWS CloudFront to serve static assets.
+
+87. **How do you perform logging in a Node.js application?**
+    - **Answer:** Use logging libraries like Winston or Bunyan to log application activity.
+    - **Example:**
+      ```javascript
+      const winston = require('winston');
+      const logger = winston.createLogger({
+        transports: [
+          new winston.transports.File({ filename: 'combined.log' })
+        ]
+      });
+      logger.info('This is an info message');
+      ```
+
+88. **What is OAuth?**
+    - **Answer:** OAuth is an open standard for access delegation, commonly used for token-based authentication.
+    - **Example:** Implementing Google OAuth to allow users to log in to your application with their Google account.
+
+89. **What is a microservices architecture?**
+    - **Answer:** Microservices architecture is an approach to building applications as a suite of small, independent services that communicate over a network.
+    - **Example:** A shopping application with separate services for user management, product catalog, and order processing.
+
+90. **What are environment configurations?**
+    - **Answer:** Environment configurations manage different settings for development, testing, and production environments.
+    - **Example:** Using a `.env` file to store sensitive data like API keys.
+      ```plaintext
+      DB_CONNECTION=mongodb://localhost/mydatabase
+      ```
+
+## Conclusion
+
+This README file provides a comprehensive overview of the most common questions and answers related to the MERN stack. Each question is designed to help you understand the key concepts and practices as a MERN stack developer. Whether you're just starting or looking to deepen your knowledge, this guide can serve as a valuable resource.
+
+Feel free to explore each topic further, practice coding examples, and build projects to solidify your understanding of the MERN stack!
