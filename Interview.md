@@ -977,7 +977,129 @@ You said:
      app.use(helmet());
      ```
 
-     
+     115. **What is the role of a load balancer?**
+   - **Answer:** A load balancer distributes incoming network traffic across multiple servers to ensure reliability and performance, preventing any single server from becoming a bottleneck.
+   - **Example:** Using Nginx as a load balancer for a Node.js application.
+
+116. **What is PM2 used for?**
+   - **Answer:** PM2 is a process manager for Node.js applications that keeps your application running smoothly by managing processes and providing features like logging and monitoring.
+   - **Example:** Restarting your application automatically if it crashes:
+     ```bash
+     pm2 start app.js --watch
+     ```
+
+117. **How do you monitor a Node.js application?**
+   - **Answer:** You can monitor Node.js applications using tools like New Relic, Datadog, or built-in logging to track performance and detect issues.
+   - **Example:** Integrating New Relic with your Node.js application for performance monitoring.
+
+118. **What is a reverse proxy?**
+   - **Answer:** A reverse proxy is a server that forwards client requests to another server, often used for load balancing, security, and caching.
+   - **Example:** Setting up Nginx as a reverse proxy for your Node.js application.
+
+119. **What is a CDN?**
+   - **Answer:** A Content Delivery Network (CDN) is a network of servers distributed geographically that deliver content to users based on their location, improving load times and availability.
+   - **Example:** Using Cloudflare or AWS CloudFront to serve static assets.
+
+120. **How do you perform logging in a Node.js application?**
+   - **Answer:** You can use logging libraries like Winston or Morgan to log application activity for debugging and monitoring.
+   - **Example:**
+     ```javascript
+     const morgan = require('morgan');
+     app.use(morgan('combined')); // Logs HTTP requests
+     ```
+
+121. **What are environment variables in deployment?**
+   - **Answer:** Environment variables are used to store configuration settings, such as database credentials or API keys, without hardcoding them in your codebase.
+   - **Example:** Using a `.env` file and the `dotenv` package to load environment variables:
+     ```plaintext
+     DB_HOST=localhost
+     DB_USER=user
+     DB_PASS=pass
+     ```
+
+122. **How do you use Docker for a MERN stack application?**
+   - **Answer:** You can create a Dockerfile for your MERN stack application and use Docker Compose to manage multi-container deployments.
+   - **Example:** A simple `docker-compose.yml` file:
+     ```yaml
+     version: '3'
+     services:
+       mongo:
+         image: mongo
+         ports:
+           - "27017:27017"
+       web:
+         build: .
+         ports:
+           - "3000:3000"
+         depends_on:
+           - mongo
+     ```
+
+123. **How do you create a production build in React?**
+   - **Answer:** You can create a production build of your React application by running the `npm run build` command, which optimizes your application for deployment.
+   - **Example:** After running the build command, your production files will be generated in the `build` directory.
+
+124. **How do you set up a database in a cloud environment?**
+   - **Answer:** You can use cloud services like MongoDB Atlas, AWS RDS, or Firebase to set up your database. Each service provides a web interface to create and manage your database.
+   - **Example:** Creating a MongoDB Atlas cluster to host your database in the cloud.
+
+125. **What is Heroku and how do you deploy to it?**
+   - **Answer:** Heroku is a cloud platform that allows developers to deploy and manage applications easily. You can deploy to Heroku using Git commands.
+   - **Example:**
+     ```bash
+     heroku create
+     git push heroku master
+     ```
+
+126. **How do you set up Continuous Integration for a MERN application?**
+   - **Answer:** You can set up Continuous Integration (CI) using services like GitHub Actions, Travis CI, or CircleCI to automate testing and deployment whenever code is pushed.
+   - **Example:** A simple GitHub Actions workflow for CI:
+     ```yaml
+     name: CI
+     on: [push]
+     jobs:
+       build:
+         runs-on: ubuntu-latest
+         steps:
+           - uses: actions/checkout@v2
+           - name: Install Node.js
+             uses: actions/setup-node@v2
+             with:
+               node-version: '14'
+           - run: npm install
+           - run: npm test
+     ```
+
+127. **What are some common security practices for deploying a MERN application?**
+   - **Answer:** Common security practices include using HTTPS, validating input data, securing sensitive information with environment variables, and regularly updating dependencies.
+   - **Example:** Implementing rate limiting to prevent brute-force attacks using the `express-rate-limit` middleware.
+
+128. **How do you monitor application performance in production?**
+   - **Answer:** You can monitor application performance using tools like New Relic, Datadog, or Application Performance Monitoring (APM) services.
+   - **Example:** Setting up New Relic to track response times and error rates.
+
+129. **What are the best practices for API versioning?**
+   - **Answer:** Best practices for API versioning include using URL versioning (e.g., `/api/v1/resource`), keeping backward compatibility, and clearly documenting changes.
+   - **Example:** Using a version number in the API endpoint:
+     ```javascript
+     app.get('/api/v1/users', (req, res) => {
+       // Return users
+     });
+     ```
+
+130. **What tools can you use for performance testing a MERN application?**
+   - **Answer:** You can use tools like Apache JMeter, LoadRunner, or k6 for performance testing to simulate multiple users and measure application performance under load.
+   - **Example:** Using k6 to run load tests:
+     ```javascript
+     import http from 'k6/http';
+     import { sleep } from 'k6';
+
+     export default function () {
+       http.get('http://localhost:3000/api/users');
+       sleep(1);
+     }
+     ```
+
 
 ## Conclusion
 
