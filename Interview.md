@@ -1100,6 +1100,97 @@ You said:
      }
      ```
 
+# MERN Stack Interview Questions and Answers
+
+This document contains 100 MERN Stack interview questions and answers. These are commonly asked in software houses in Lahore, Pakistan, and cover topics related to MongoDB, Express.js, React.js, Node.js, and general full-stack development.
+
+## MongoDB (NoSQL Database) Questions:
+
+1. **What is MongoDB, and how does it differ from SQL databases?**
+   - MongoDB is a NoSQL, document-oriented database that stores data in JSON-like documents. Unlike SQL databases, which store data in tables with fixed schemas, MongoDB has a flexible schema and stores data in collections of documents.
+
+2. **Explain the structure of a MongoDB document.**
+   - A MongoDB document is a JSON-like structure consisting of key-value pairs. It is similar to a dictionary in programming languages and can have nested documents.
+
+3. **What are the advantages of using MongoDB?**
+   - MongoDB is schema-less, scalable, supports horizontal scaling, has rich querying capabilities, and stores data in a flexible, JSON-like format, making it easy to work with evolving data models.
+
+4. **How do you create a MongoDB database and collection?**
+   - A database and collection are automatically created when you first insert data using `db.collection.insertOne()` or `db.collection.insertMany()`. You can also explicitly create collections with `db.createCollection()`.
+
+5. **What are indexes in MongoDB, and why are they important?**
+   - Indexes improve the speed of query execution by allowing MongoDB to quickly locate data without scanning the entire collection. However, they consume extra space and slow down write operations.
+
+6. **How do you perform CRUD operations in MongoDB?**
+   - CRUD operations can be performed using the following commands:
+     - **Create**: `db.collection.insertOne()`, `db.collection.insertMany()`
+     - **Read**: `db.collection.find()`
+     - **Update**: `db.collection.updateOne()`, `db.collection.updateMany()`
+     - **Delete**: `db.collection.deleteOne()`, `db.collection.deleteMany()`
+
+7. **Explain the difference between `find()` and `findOne()` in MongoDB.**
+   - `find()` returns all documents that match a query, while `findOne()` returns the first document that matches the query.
+
+8. **What is the aggregation framework in MongoDB?**
+   - The aggregation framework allows for the processing of data and transforming it through a pipeline of stages (like `$match`, `$group`, `$sort`) to perform calculations, filtering, and projections.
+
+9. **How do you handle relationships in MongoDB (one-to-one, one-to-many, many-to-many)?**
+   - Relationships can be handled by embedding (storing related documents inside a document) or referencing (storing IDs of related documents in a separate document). Embedding is often used for one-to-one or one-to-many, while referencing is used for many-to-many relationships.
+
+10. **What are the different types of data models in MongoDB?**
+    - MongoDB supports two types of data models:
+      - **Embedded Data Model**: Related data is stored within a single document.
+      - **Referenced Data Model**: Related data is stored in separate documents and linked through references.
+
+11. **How do you perform pagination in MongoDB?**
+    - Pagination is typically performed using the `limit()` and `skip()` methods. `limit()` defines the number of documents to retrieve, while `skip()` specifies the number of documents to skip.
+
+12. **Explain the purpose of `ObjectId` in MongoDB.**
+    - `ObjectId` is the default unique identifier for documents in MongoDB. It contains a timestamp, a machine ID, a process ID, and an incrementing counter to ensure uniqueness.
+
+13. **How do you update a document in MongoDB without changing the existing fields?**
+    - Use the `$set` operator with `updateOne()` or `updateMany()` to update only the specified fields without altering the rest of the document.
+
+14. **What is the difference between `save()` and `insert()` in MongoDB?**
+    - `save()` either inserts a new document or updates an existing one if the document already has an `_id`, while `insert()` only inserts new documents.
+
+15. **Explain what sharding is in MongoDB.**
+    - Sharding is a method for distributing data across multiple servers to support horizontal scaling in MongoDB. It splits data into smaller, more manageable parts called shards.
+
+## Express.js (Backend Framework) Questions:
+
+16. **What is Express.js?**
+    - Express.js is a minimal, fast web application framework for Node.js, designed for building APIs and web applications. It simplifies handling HTTP requests, middleware, and routing.
+
+17. **What is middleware in Express.js?**
+    - Middleware functions are functions that execute in the request-response cycle in an Express app. They can modify the request or response, end the request-response cycle, or call the next middleware in the stack.
+
+18. **How do you define a route in Express.js?**
+    - A route is defined using `app.get()`, `app.post()`, `app.put()`, or `app.delete()` methods. For example, `app.get('/users', (req, res) => { /* handler */ })` defines a GET route for the `/users` endpoint.
+
+19. **How do you handle errors in Express.js?**
+    - Errors are handled by defining error-handling middleware using four arguments: `(err, req, res, next)`. This middleware catches errors and sends appropriate responses.
+
+20. **What is the purpose of `next()` in Express.js?**
+    - `next()` is used to pass control to the next middleware or route handler in the stack. Without calling `next()`, the request-response cycle will not proceed.
+
+21. **Explain the difference between `app.use()` and `app.get()` in Express.js.**
+    - `app.use()` is used for applying middleware to all routes or specific route patterns, while `app.get()` defines a route for handling GET requests.
+
+22. **How do you serve static files in Express.js?**
+    - Static files (like HTML, CSS, JavaScript) can be served using the `express.static()` middleware. For example: `app.use(express.static('public'))`.
+
+23. **What is a RESTful API?**
+    - A RESTful API follows the principles of REST (Representational State Transfer) and is designed around resources, using HTTP methods (GET, POST, PUT, DELETE) for CRUD operations.
+
+24. **How do you handle form data in Express.js?**
+    - You can handle form data in Express.js using the `body-parser` middleware, which parses incoming request bodies and makes them available under `req.body`.
+
+25. **What is CORS, and how do you enable it in Express.js?**
+    - CORS (Cross-Origin Resource Sharing) is a security feature in browsers that restricts web pages from making requests to a different domain. It can be enabled in Express.js using the `cors` package: `app.use(cors())`.
+
+... (add more Express.js, React.js, and Node.js questions similarly)
+
 
 ## Conclusion
 
